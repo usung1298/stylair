@@ -6,11 +6,10 @@ import RecommendationList from '../components/RecommendationList';
 
 export default function HomePage() {
   const { season, setSeason, style, setStyle, query, setQuery, filtered } = useFilter(OUTFITS);
-  const { result, loading, recommend } = useAI();
+  const { result, loading, error, recommend } = useAI();
 
-  // useRef: AI 셀렉트 참조
-  const aiSeasonRef = useRef<HTMLSelectElement>(null);
-  const aiStyleRef  = useRef<HTMLSelectElement>(null);
+  const aiSeasonRef   = useRef<HTMLSelectElement>(null);
+  const aiStyleRef    = useRef<HTMLSelectElement>(null);
   const aiOccasionRef = useRef<HTMLSelectElement>(null);
 
   const handleAI = () => {
@@ -23,7 +22,6 @@ export default function HomePage() {
 
   return (
     <main>
-      {/* Hero */}
       <section className="hero">
         <div className="hero-tag">✦ AI 기반 코디 추천 서비스</div>
         <h1>당신만을 위한<br />스타일을 찾아드립니다</h1>
@@ -38,13 +36,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* AI 추천 섹션 */}
       <section className="ai-section" id="ai-section">
         <div className="ai-header">
           <div className="ai-icon">✨</div>
           <div>
             <div className="ai-title">AI 스타일 추천</div>
-            <div className="ai-sub">취향과 상황을 선택하면 AI가 맞춤 코디를 추천해 드립니다</div>
+            <div className="ai-sub">취향과 상황을 선택하면 Gemini AI가 맞춤 코디를 추천해 드립니다</div>
           </div>
         </div>
         <div className="ai-controls">
@@ -58,7 +55,7 @@ export default function HomePage() {
           </select>
           <select className="ai-select" ref={aiOccasionRef}>
             <option value="">상황 선택</option>
-            {['데이트','출근','여행','모임','캠퍼스'].map(s => <option key={s} value={s}>{s}</option>)}
+            {['데이트','출근','여행','모임','캠퍼스','파티','운동'].map(s => <option key={s} value={s}>{s}</option>)}
           </select>
           <button className="ai-run-btn" onClick={handleAI} disabled={loading}>
             {loading ? '분석 중...' : '✨ 추천받기'}
@@ -68,17 +65,18 @@ export default function HomePage() {
           {loading ? (
             <div className="ai-loading">
               <span className="dot" /><span className="dot" /><span className="dot" />
-              <span style={{ marginLeft: 8 }}>AI가 코디를 분석 중이에요...</span>
+              <span style={{ marginLeft: 8 }}>Gemini AI가 코디를 분석 중이에요...</span>
             </div>
+          ) : error ? (
+            <span style={{ color: 'var(--danger)' }}>{error}</span>
           ) : result ? (
-            <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit' }}>{result}</pre>
+            <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit', lineHeight: 1.8 }}>{result}</pre>
           ) : (
             <span className="ai-placeholder">계절, 스타일, 상황을 선택하고 '추천받기'를 클릭하면 AI가 맞춤 코디를 추천해 드립니다 🎯</span>
           )}
         </div>
       </section>
 
-      {/* 필터 + 코디 목록 */}
       <div id="list-section">
         <FilterBar
           season={season} setSeason={setSeason}
