@@ -5,10 +5,10 @@ import { useAppContext } from '../context/AppContext';
 export default function PurchasePage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { likedOutfits, toggleLike, user, showToast } = useAppContext();
+  const { likedOutfits, toggleLike, user, showToast, cart, addToCart } = useAppContext();
 
   const outfit = OUTFITS.find(o => o.id === Number(id));
-  if (!outfit) { navigate('/404'); return null;  }
+  if (!outfit) { navigate('/404'); return null; }
 
   const liked = likedOutfits.includes(outfit.id);
 
@@ -26,6 +26,35 @@ export default function PurchasePage() {
 
   const getCoupangLink = (itemName: string) =>
     'https://www.coupang.com/np/search?q=' + encodeURIComponent(itemName);
+
+  const isInCart = (itemName: string) =>
+    cart.some(c => c.id === outfit.id + '-' + itemName);
+
+  const handleAddToCart = (itemName: string, emoji: string, price: string) => {
+    addToCart({
+      id: outfit.id + '-' + itemName,
+      outfitId: outfit.id,
+      outfitTitle: outfit.title,
+      name: itemName,
+      emoji,
+      price,
+    });
+    showToast('장바구니에 담았어요 🛒');
+  };
+
+  const handleAddAllToCart = () => {
+    outfit.items.forEach(item => {
+      addToCart({
+        id: outfit.id + '-' + item.name,
+        outfitId: outfit.id,
+        outfitTitle: outfit.title,
+        name: item.name,
+        emoji: item.emoji,
+        price: item.price,
+      });
+    });
+    showToast('전체 아이템을 장바구니에 담았어요 🛒');
+  };
 
   const totalPrice = outfit.items.reduce((sum, item) => {
     const num = parseInt(item.price.replace(/[^0-9]/g, ''));
@@ -66,11 +95,8 @@ export default function PurchasePage() {
             <button className={'like-btn-lg' + (liked ? ' liked' : '')} onClick={handleLike}>
               {liked ? 'heart 찜됨' : 'heart 찜하기'}
             </button>
-            <button
-              className="buy-btn"
-              onClick={() => outfit.items.forEach(item => window.open(getMusinsaLink(item.name), '_blank'))}
-            >
-              전체 아이템 무신사 검색
+            <button className="buy-btn" onClick={handleAddAllToCart}>
+              🛒 전체 장바구니 담기
             </button>
           </div>
         </div>
@@ -79,7 +105,7 @@ export default function PurchasePage() {
       <div className="purchase-items-section">
         <div className="section-header">
           <div className="section-title">구성 아이템 ({outfit.items.length}개)</div>
-          <div className="result-count">각 아이템을 클릭해서 구매하세요</div>
+          <div className="result-count">아이템별로 쇼핑몰에서 구매하세요</div>
         </div>
         <div className="purchase-items-grid">
           {outfit.items.map((item, idx) => (
@@ -98,6 +124,12 @@ export default function PurchasePage() {
                   <a href={getCoupangLink(item.name)} target="_blank" rel="noopener noreferrer" className="shop-btn coupang">
                     쿠팡
                   </a>
+                  <button
+                    className={'shop-btn cart-add' + (isInCart(item.name) ? ' in-cart' : '')}
+                    onClick={() => handleAddToCart(item.name, item.emoji, item.price)}
+                  >
+                    {isInCart(item.name) ? '담김' : '+ 담기'}
+                  </button>
                 </div>
               </div>
             </div>
@@ -110,7 +142,7 @@ export default function PurchasePage() {
         <div>
           <div className="purchase-guide-title">코디 그대로 구매하는 방법</div>
           <div className="purchase-guide-desc">
-            각 아이템 옆 쇼핑몰 버튼을 클릭하면 해당 아이템을 바로 검색할 수 있어요.
+            장바구니에 담고 싶은 아이템을 선택하거나, 전체 담기 버튼으로 한 번에 담을 수 있어요.
             무신사, 네이버 쇼핑, 쿠팡에서 비교하며 가장 좋은 가격으로 구매해보세요!
           </div>
         </div>

@@ -1,11 +1,10 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAppContext } from '../context/AppContext';
 
-// Header 컴포넌트: 네비게이션, 로그인/로그아웃, 다크모드 토글
 export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user, setUser, isDark, toggleTheme, showToast } = useAppContext();
+  const { user, setUser, isDark, toggleTheme, showToast, cart } = useAppContext();
 
   const isActive = (path: string) => location.pathname === path ? 'nav-btn active' : 'nav-btn';
 
@@ -17,7 +16,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="logo" onClick={() => navigate('/')}>✦ STYLAIR</div>
+      <div className="logo" onClick={() => navigate('/')}>STYLAIR</div>
       <nav className="nav">
         <button className={isActive('/')} onClick={() => navigate('/')}>홈</button>
         <button className={isActive('/mypage')} onClick={() => navigate('/mypage')}>마이페이지</button>
@@ -29,6 +28,15 @@ export default function Header() {
         <button className="theme-btn" onClick={toggleTheme} title="테마 전환">
           {isDark ? '🌙' : '☀️'}
         </button>
+
+        {/* 장바구니 버튼 */}
+        <button className="cart-btn" onClick={() => navigate('/cart')} title="장바구니">
+          🛒
+          {cart.length > 0 && (
+            <span className="cart-badge">{cart.length}</span>
+          )}
+        </button>
+
         {user ? (
           <div className="user-badge" onClick={() => navigate('/mypage')}>
             <div className="avatar">{user.name.slice(0, 1).toUpperCase()}</div>

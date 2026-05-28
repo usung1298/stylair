@@ -1,9 +1,8 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { AppContextType, User } from '../types';
+import { AppContextType, User, CartItem } from '../types';
 
 const AppContext = createContext<AppContextType | null>(null);
 
-// useContext hook wrapper
 export function useAppContext(): AppContextType {
   const ctx = useContext(AppContext);
   if (!ctx) throw new Error('useAppContext must be used inside AppProvider');
@@ -13,17 +12,13 @@ export function useAppContext(): AppContextType {
 interface Props { children: ReactNode; }
 
 export function AppProvider({ children }: Props) {
-  // useState: 사용자 로그인 상태
   const [user, setUserState] = useState<User | null>(null);
-  // useState: 찜한 코디 목록
   const [likedOutfits, setLikedOutfits] = useState<number[]>([]);
-  // useState: 다크모드 상태
+  const [cart, setCart] = useState<CartItem[]>([]);
   const [isDark, setIsDark] = useState(true);
-  // useState: 토스트 메시지
   const [toast, setToast] = useState('');
   const [toastVisible, setToastVisible] = useState(false);
 
-  // useEffect: LocalStorage에서 상태 복원
   useEffect(() => {
     const saved = localStorage.getItem('stylair_state');
     if (saved) {
@@ -31,17 +26,16 @@ export function AppProvider({ children }: Props) {
         const s = JSON.parse(saved);
         if (s.user) setUserState(s.user);
         if (s.likedOutfits) setLikedOutfits(s.likedOutfits);
+        if (s.cart) setCart(s.cart);
         if (typeof s.isDark === 'boolean') setIsDark(s.isDark);
       } catch (_) {}
     }
   }, []);
 
-  // useEffect: 상태 변경 시 LocalStorage 저장
   useEffect(() => {
-    localStorage.setItem('stylair_state', JSON.stringify({ user, likedOutfits, isDark }));
-  }, [user, likedOutfits, isDark]);
+    localStorage.setItem('stylair_state', JSON.stringify({ user, likedOutfits, cart, isDark }));
+  }, [user, likedOutfits, cart, isDark]);
 
-  // useEffect: 다크모드 class 적용
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
   }, [isDark]);
@@ -54,6 +48,19 @@ export function AppProvider({ children }: Props) {
     );
   };
 
+  const addToCart = (item: CartItem) => {
+    setCart(prev => {
+      if (prev.find(c => c.id === item.id)) return prev;
+      return [...prev, item];
+    });
+  };
+
+  const removeFromCart = (id: string) => {
+    setCart(prev => prev.filter(c => c.id !== id));
+  };
+
+  const clearCart = () => setCart([]);
+
   const toggleTheme = () => setIsDark(prev => !prev);
 
   const showToast = (msg: string) => {
@@ -63,9 +70,15 @@ export function AppProvider({ children }: Props) {
   };
 
   return (
-    <AppContext.Provider value={{ user, setUser, likedOutfits, toggleLike, isDark, toggleTheme, showToast }}>
+    <AppContext.Provider value={{
+      user, setUser,
+      likedOutfits, toggleLike,
+      cart, addToCart, removeFromCart, clearCart,
+      isDark, toggleTheme,
+      showToast,
+    }}>
       {children}
-      <div className={`toast${toastVisible ? ' show' : ''}`}>{toast}</div>
+      <div className={'toast' + (toastVisible ? ' show' : '')}>{toast}</div>
     </AppContext.Provider>
   );
 }

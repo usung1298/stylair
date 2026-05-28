@@ -406,6 +406,7 @@ button { cursor: pointer; font-family: inherit; }
 .shop-btn.musinsa { background: #000; color: #fff; }
 .shop-btn.naver { background: #03c75a; color: #fff; }
 .shop-btn.coupang { background: #c00; color: #fff; }
+
 /* 구매 안내 */
 .purchase-guide {
   background: rgba(200,169,126,0.08); border: 1px solid rgba(200,169,126,0.25);
@@ -421,3 +422,62 @@ button { cursor: pointer; font-family: inherit; }
   .purchase-img-wrap { aspect-ratio: 4/3; }
   .purchase-header-actions { flex-direction: column; }
 }
+
+/* ── 장바구니 버튼 (헤더) ── */
+.cart-btn {
+  position: relative; background: none; border: 0.5px solid var(--border);
+  border-radius: 20px; padding: 5px 12px; font-size: 1rem; cursor: pointer;
+  transition: all 0.2s; color: var(--text);
+}
+.cart-btn:hover { border-color: var(--accent); color: var(--accent); }
+.cart-badge {
+  position: absolute; top: -6px; right: -6px;
+  background: var(--danger); color: #fff;
+  font-size: 0.65rem; font-weight: 700;
+  width: 18px; height: 18px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── 장바구니 담기 버튼 ── */
+.shop-btn.cart-add {
+  background: rgba(200,169,126,0.15); color: var(--accent);
+  border: 0.5px solid var(--accent);
+}
+.shop-btn.cart-add.in-cart {
+  background: rgba(107,194,135,0.15); color: var(--success);
+  border-color: var(--success);
+}
+
+/* ── 장바구니 페이지 ── */
+.cart-wrap { max-width: 700px; margin: 0 auto; padding: 2rem; }
+.cart-clear-btn {
+  background: none; border: 0.5px solid var(--border); color: var(--muted);
+  border-radius: 20px; padding: 5px 14px; font-size: 0.8rem; cursor: pointer; transition: all 0.2s;
+}
+.cart-clear-btn:hover { color: var(--danger); border-color: var(--danger); }
+
+.cart-items { display: flex; flex-direction: column; gap: 12px; margin-bottom: 2rem; }
+.cart-item-card {
+  background: var(--bg2); border: 0.5px solid var(--border); border-radius: 16px;
+  padding: 1.25rem; display: flex; gap: 1rem; align-items: flex-start;
+  transition: all 0.2s;
+}
+.cart-item-card:hover { border-color: var(--accent); }
+.cart-item-emoji { font-size: 2rem; flex-shrink: 0; }
+.cart-item-info { flex: 1; }
+.cart-item-outfit { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; }
+.cart-item-name { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.cart-item-price { font-size: 0.9rem; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+.cart-item-remove {
+  background: none; border: none; color: var(--muted); font-size: 1rem;
+  cursor: pointer; padding: 4px 8px; border-radius: 8px; transition: all 0.2s; flex-shrink: 0;
+}
+.cart-item-remove:hover { color: var(--danger); background: rgba(224,96,96,0.1); }
+
+.cart-total {
+  background: var(--bg2); border: 0.5px solid var(--border); border-radius: 16px;
+  padding: 1.5rem;
+}
+.cart-total-info { display: flex; justify-content: space-between; align-items: center; }
+.cart-total-label { font-size: 0.9rem; color: var(--muted); }
+.cart-total-price { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
