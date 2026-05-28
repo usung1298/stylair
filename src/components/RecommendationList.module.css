@@ -1,0 +1,24 @@
+/* src/components/RecommendationList.module.css */
+.header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 1.5rem;
+}
+.title { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+.count { font-size: 0.8rem; color: var(--muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.empty {
+  text-align: center; padding: 5rem 2rem;
+  color: var(--muted); grid-column: 1/-1;
+}
+.emptyIcon { font-size: 3rem; margin-bottom: 1rem; }
+.emptyTitle { font-size: 1.1rem; color: var(--text); margin-bottom: 6px; }
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+}

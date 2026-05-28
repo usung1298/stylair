@@ -1,0 +1,57 @@
+/* src/pages/MyPage.module.css */
+.wrap { padding: 2rem; max-width: 1000px; margin: 0 auto; }
+
+.profileCard {
+  background: var(--bg2); border-radius: 20px; padding: 2rem;
+  margin-bottom: 2rem; border: 0.5px solid var(--border);
+  display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;
+}
+
+.avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--accent); display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; color: #0a0a0f; font-weight: 700; flex-shrink: 0;
+}
+
+.userName  { font-size: 1.3rem; font-weight: 700; color: var(--text); }
+.userEmail { color: var(--muted); font-size: 0.85rem; margin-bottom: 8px; }
+
+.styleTags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.styleLabel { font-size: 0.75rem; color: var(--muted); margin-right: 2px; }
+.styleTag {
+  background: rgba(200,169,126,0.15); color: var(--accent);
+  padding: 3px 12px; border-radius: 20px; font-size: 0.75rem;
+}
+
+.statBadge {
+  margin-left: auto; text-align: center;
+  background: var(--bg3); border-radius: 12px; padding: 1rem 1.5rem;
+  border: 0.5px solid var(--border);
+}
+.statNum   { font-size: 2rem; font-weight: 800; color: var(--accent); }
+.statLabel { font-size: 0.75rem; color: var(--muted); }
+
+.sectionTitle { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.empty { text-align: center; padding: 4rem 2rem; color: var(--muted); }
+.emptyIcon  { font-size: 3rem; margin-bottom: 1rem; }
+.emptyTitle { font-size: 1.1rem; color: var(--text); margin-bottom: 6px; }
+
+.goBtn {
+  margin-top: 1.2rem; background: var(--accent); color: #0a0a0f;
+  border: none; border-radius: 20px; padding: 10px 24px;
+  font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+  font-family: inherit;
+}
+.goBtn:hover { background: var(--accent2); }
+
+@media (max-width: 600px) {
+  .wrap { padding: 1rem; }
+  .statBadge { margin-left: 0; }
+}

@@ -1,0 +1,15 @@
+/* src/components/Footer.module.css */
+.footer {
+  border-top: 0.5px solid var(--border);
+  background: var(--bg2);
+  padding: 1.5rem 2rem;
+}
+.inner {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 0.5rem;
+}
+.logo {
+  font-size: 0.9rem; font-weight: 700;
+  letter-spacing: 0.1em; color: var(--accent);
+}
+.copy { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }

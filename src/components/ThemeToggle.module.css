@@ -1,0 +1,14 @@
+/* src/components/ThemeToggle.module.css */
+.btn {
+  background: none;
+  border: 0.5px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:hover {
+  border-color: var(--accent);
+  background: rgba(200,169,126,0.1);
+}
