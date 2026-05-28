@@ -8,7 +8,7 @@ export default function PurchasePage() {
   const { likedOutfits, toggleLike, user, showToast } = useAppContext();
 
   const outfit = OUTFITS.find(o => o.id === Number(id));
-  if (!outfit) { navigate('/404'); return null; }
+  if (!outfit) { navigate('/404'); return null;  }
 
   const liked = likedOutfits.includes(outfit.id);
 
