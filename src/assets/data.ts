@@ -1,10 +1,9 @@
 import { Outfit } from '../types';
 
 export const OUTFITS: Outfit[] = [
-  // ── 봄 캐주얼 ──────────────────────────────────────────────
   {
     id: 1, emoji: '🧥',
-    image: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80',
     title: '오버핏 데님 룩', brand: "ZARA x Levi's", price: '₩182,000',
     season: '봄', style: '캐주얼', tags: ['데님', '오버핏', '봄'],
     desc: '클래식한 오버핏 데님 재킷과 와이드 팬츠의 조화. 흰 티셔츠로 깔끔함을 더했습니다.',
@@ -17,7 +16,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 2, emoji: '🌸',
-    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80',
     title: '플로럴 원피스 룩', brand: 'H&M', price: '₩129,000',
     season: '봄', style: '캐주얼', tags: ['원피스', '플로럴', '봄'],
     desc: '화사한 플로럴 패턴의 미디 원피스. 봄 나들이나 브런치 데이트에 완벽한 룩.',
@@ -29,7 +28,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 3, emoji: '🧣',
-    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=400&q=80',
     title: '파스텔 레이어드 룩', brand: 'COS', price: '₩198,000',
     season: '봄', style: '미니멀', tags: ['파스텔', '레이어드', '봄'],
     desc: '파스텔 톤의 니트와 와이드 팬츠 조합. 봄의 따뜻한 색감을 담은 미니멀 룩.',
@@ -41,7 +40,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 4, emoji: '👔',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80',
     title: '봄 포멀 수트 룩', brand: 'Theory', price: '₩320,000',
     season: '봄', style: '포멀', tags: ['수트', '포멀', '봄'],
     desc: '라이트 베이지 수트와 화이트 셔츠의 봄 포멀 룩. 면접이나 비즈니스 미팅에 최적.',
@@ -54,7 +53,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 5, emoji: '🌿',
-    image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=400&q=80',
     title: '내추럴 린넨 룩', brand: 'Muji', price: '₩112,000',
     season: '봄', style: '미니멀', tags: ['린넨', '내추럴', '봄'],
     desc: '자연스러운 린넨 소재의 베이지 셔츠와 크림 팬츠. 편안하고 세련된 데일리 룩.',
@@ -64,11 +63,9 @@ export const OUTFITS: Outfit[] = [
       { name: '캔버스 토트백', emoji: '👜', price: '₩29,000' },
     ],
   },
-
-  // ── 여름 ──────────────────────────────────────────────────
   {
     id: 6, emoji: '☀️',
-    image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=400&q=80',
     title: '리조트 썸머 룩', brand: 'Sundek', price: '₩135,000',
     season: '여름', style: '캐주얼', tags: ['여름', '리조트', '바캉스'],
     desc: '린넨 셔츠와 버뮤다 쇼츠의 리조트 룩. 바닷가나 휴가지에 완벽한 여름 코디.',
@@ -81,7 +78,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 7, emoji: '🎽',
-    image: 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=400&q=80',
     title: '스트릿 스포티 룩', brand: 'Nike x Supreme', price: '₩198,000',
     season: '여름', style: '스트릿', tags: ['스트릿', '스포티', '여름'],
     desc: '그래픽 티셔츠와 트랙 팬츠의 스트릿 스포티 룩. 편안하면서도 트렌디한 스타일.',
@@ -94,7 +91,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 8, emoji: '👗',
-    image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80',
     title: '미니 원피스 룩', brand: 'Zara', price: '₩89,000',
     season: '여름', style: '캐주얼', tags: ['미니', '원피스', '여름'],
     desc: '심플한 화이트 미니 원피스. 여름 데이트나 야외 행사에 청량한 느낌을 줍니다.',
@@ -106,7 +103,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 9, emoji: '🏄',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=400&q=80',
     title: '서핑 비치 룩', brand: 'Quiksilver', price: '₩95,000',
     season: '여름', style: '스포티', tags: ['비치', '서핑', '여름'],
     desc: '래시가드와 보드쇼츠의 비치 스포티 룩. 서핑이나 수영 후에도 멋스러운 스타일.',
@@ -118,7 +115,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 10, emoji: '🌺',
-    image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=400&q=80',
     title: '보헤미안 썸머 룩', brand: 'Free People', price: '₩165,000',
     season: '여름', style: '빈티지', tags: ['보헤미안', '빈티지', '여름'],
     desc: '플리츠 맥시스커트와 크롭탑의 보헤미안 룩. 페스티벌이나 야외 파티에 완벽.',
@@ -131,7 +128,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 11, emoji: '🌊',
-    image: 'https://images.unsplash.com/photo-1521577352947-9bb58764b69a?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=400&q=80',
     title: '마린 스트라이프 룩', brand: 'Saint James', price: '₩145,000',
     season: '여름', style: '캐주얼', tags: ['마린', '스트라이프', '여름'],
     desc: '네이비 스트라이프 티셔츠와 화이트 쇼츠의 마린 룩. 항구 마을 감성이 물씬.',
@@ -142,11 +139,9 @@ export const OUTFITS: Outfit[] = [
       { name: '캔버스 토트', emoji: '👜', price: '₩35,000' },
     ],
   },
-
-  // ── 가을 ──────────────────────────────────────────────────
   {
     id: 12, emoji: '🍂',
-    image: 'https://images.unsplash.com/photo-1544441893-675973e31985?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1604644401890-0bd678c83788?w=400&q=80',
     title: '레이어드 니트 룩', brand: 'COS', price: '₩245,000',
     season: '가을', style: '미니멀', tags: ['니트', '레이어드', '가을'],
     desc: '크림색 오버핏 니트와 베이지 트렌치코트의 완벽한 레이어링. 가을의 감성을 담은 룩.',
@@ -159,7 +154,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 13, emoji: '🧤',
-    image: 'https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=400&q=80',
     title: '빈티지 레트로 룩', brand: 'Vintage Shop', price: '₩155,000',
     season: '가을', style: '빈티지', tags: ['빈티지', '레트로', '가을'],
     desc: '90년대 감성의 빈티지 청자켓과 플리스 조합. 유니크한 분위기의 가을 코디.',
@@ -172,7 +167,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 14, emoji: '🎃',
-    image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1548624149-f9b7b0a0b9b4?w=400&q=80',
     title: '어스톤 코디 룩', brand: 'Arket', price: '₩278,000',
     season: '가을', style: '미니멀', tags: ['어스톤', '브라운', '가을'],
     desc: '브라운과 카키의 어스톤 컬러 배합. 자연스럽고 세련된 가을 감성 룩.',
@@ -185,7 +180,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 15, emoji: '🍁',
-    image: 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80',
     title: '체크 패턴 가을 룩', brand: 'Burberry', price: '₩385,000',
     season: '가을', style: '포멀', tags: ['체크', '포멀', '가을'],
     desc: '클래식 체크 패턴 블레이저와 슬랙스 조합. 세련되고 격식 있는 가을 룩.',
@@ -198,7 +193,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 16, emoji: '🌰',
-    image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=400&q=80',
     title: '캐시미어 니트 룩', brand: 'Uniqlo', price: '₩189,000',
     season: '가을', style: '캐주얼', tags: ['캐시미어', '니트', '가을'],
     desc: '부드러운 캐시미어 니트와 데님 팬츠의 편안한 가을 룩. 주말 나들이에 딱.',
@@ -210,7 +205,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 17, emoji: '🦊',
-    image: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1600717448996-41d79571ee6e?w=400&q=80',
     title: '러스트 컬러 룩', brand: 'Mango', price: '₩172,000',
     season: '가을', style: '캐주얼', tags: ['러스트', '오렌지', '가을'],
     desc: '러스트 오렌지 컬러의 니트와 브라운 스커트. 가을 단풍처럼 따뜻한 색감의 룩.',
@@ -222,7 +217,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 18, emoji: '🍄',
-    image: 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=400&q=80',
     title: '스트릿 가을 룩', brand: 'Stussy', price: '₩215,000',
     season: '가을', style: '스트릿', tags: ['스트릿', '후드', '가을'],
     desc: '오버핏 후드티와 카고 팬츠의 스트릿 가을 룩. 편하고 트렌디한 데일리 스타일.',
@@ -233,11 +228,9 @@ export const OUTFITS: Outfit[] = [
       { name: '비니', emoji: '🧢', price: '₩29,000' },
     ],
   },
-
-  // ── 겨울 ──────────────────────────────────────────────────
   {
     id: 19, emoji: '❄️',
-    image: 'https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1539533018257-f8e59d6c4984?w=400&q=80',
     title: '레이어드 겨울 룩', brand: 'Moncler', price: '₩389,000',
     season: '겨울', style: '캐주얼', tags: ['패딩', '겨울', '레이어드'],
     desc: '두꺼운 다운 재킷과 터틀넥의 조화. 따뜻하면서도 세련된 겨울 룩.',
@@ -250,7 +243,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 20, emoji: '🎄',
-    image: 'https://images.unsplash.com/photo-1542060748-10c28b62716f?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80',
     title: '홀리데이 파티 룩', brand: 'Self-Portrait', price: '₩295,000',
     season: '겨울', style: '포멀', tags: ['파티', '홀리데이', '겨울'],
     desc: '반짝이는 시퀸 미디 드레스와 힐의 홀리데이 파티 룩. 크리스마스 파티에 완벽.',
@@ -262,7 +255,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 21, emoji: '☃️',
-    image: 'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1580913428023-02c695666d61?w=400&q=80',
     title: '코지 니트 룩', brand: 'Acne Studios', price: '₩312,000',
     season: '겨울', style: '미니멀', tags: ['코지', '니트', '겨울'],
     desc: '볼륨감 있는 오버핏 니트와 가죽 스커트의 조합. 세련되고 따뜻한 겨울 룩.',
@@ -287,7 +280,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 23, emoji: '🏔️',
-    image: 'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1547949003-9792a18a2601?w=400&q=80',
     title: '아웃도어 겨울 룩', brand: 'The North Face', price: '₩425,000',
     season: '겨울', style: '스포티', tags: ['아웃도어', '등산', '겨울'],
     desc: '기능성 플리스와 테크 팬츠의 아웃도어 룩. 추운 날씨 야외 활동에 최적.',
@@ -300,7 +293,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 24, emoji: '🌨️',
-    image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=400&q=80',
     title: '캐시미어 코트 룩', brand: 'Max Mara', price: '₩520,000',
     season: '겨울', style: '포멀', tags: ['코트', '캐시미어', '겨울'],
     desc: '클래식 카멜 캐시미어 코트와 부츠의 럭셔리 겨울 룩. 격식 있는 자리에 완벽.',
@@ -313,7 +306,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 25, emoji: '🎿',
-    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1578681994506-b8f463449011?w=400&q=80',
     title: '스키 리조트 룩', brand: 'Moncler x CP Company', price: '₩580,000',
     season: '겨울', style: '스포티', tags: ['스키', '리조트', '겨울'],
     desc: '컬러풀한 스키복 스타일의 겨울 룩. 스키장이나 눈 내리는 날 스냅에 최고.',
@@ -324,11 +317,9 @@ export const OUTFITS: Outfit[] = [
       { name: '비니 + 장갑 세트', emoji: '🧤', price: '₩49,000' },
     ],
   },
-
-  // ── 스타일별 추가 ────────────────────────────────────────
   {
     id: 26, emoji: '🖤',
-    image: 'https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=400&q=80',
     title: '올블랙 스트릿 룩', brand: 'Rick Owens', price: '₩445,000',
     season: '가을', style: '스트릿', tags: ['올블랙', '스트릿', '다크'],
     desc: '올블랙 스트릿 룩. 레이어드된 검은 의상들이 강렬한 존재감을 만들어냅니다.',
@@ -340,7 +331,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 27, emoji: '🌙',
-    image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&q=80',
     title: '야간 데이트 룩', brand: 'Toteme', price: '₩298,000',
     season: '봄', style: '포멀', tags: ['데이트', '나이트', '포멀'],
     desc: '새틴 슬립 드레스와 블레이저의 조합. 저녁 식사나 특별한 날 밤에 완벽한 룩.',
@@ -352,7 +343,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 28, emoji: '📚',
-    image: 'https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=400&q=80',
     title: '캠퍼스 캐주얼 룩', brand: 'Champion x Carhartt', price: '₩145,000',
     season: '봄', style: '캐주얼', tags: ['캠퍼스', '대학생', '캐주얼'],
     desc: '후드티와 카고 팬츠, 스니커즈의 편안한 캠퍼스 룩. 강의실부터 도서관까지.',
@@ -365,7 +356,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 29, emoji: '✈️',
-    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80',
     title: '여행 코디 룩', brand: 'Uniqlo x Muji', price: '₩128,000',
     season: '여름', style: '캐주얼', tags: ['여행', '편안함', '캐주얼'],
     desc: '편안하면서도 스타일리시한 여행 코디. 장시간 이동에도 구김 없이 깔끔함 유지.',
@@ -378,7 +369,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 30, emoji: '💼',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80',
     title: '비즈니스 캐주얼 룩', brand: 'Brooks Brothers', price: '₩245,000',
     season: '봄', style: '포멀', tags: ['비즈니스', '출근', '캐주얼'],
     desc: '옥스퍼드 셔츠와 치노 팬츠의 스마트 캐주얼 룩. 격식과 편안함을 동시에.',
@@ -391,7 +382,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 31, emoji: '🎨',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=400&q=80',
     title: '아트 갤러리 룩', brand: 'Issey Miyake', price: '₩335,000',
     season: '봄', style: '미니멀', tags: ['아트', '미니멀', '개성'],
     desc: '구조적인 실루엣의 아방가르드 룩. 갤러리나 아트 이벤트에서 돋보이는 스타일.',
@@ -403,7 +394,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 32, emoji: '🏋️',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1535530992830-e25d07cfa780?w=400&q=80',
     title: '애슬레저 룩', brand: 'Lululemon', price: '₩198,000',
     season: '여름', style: '스포티', tags: ['애슬레저', '운동', '스포티'],
     desc: '고기능성 레깅스와 스포츠 브라의 애슬레저 룩. 헬스장부터 브런치까지.',
@@ -415,7 +406,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 33, emoji: '🌵',
-    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=400&q=80',
     title: '웨스턴 카우보이 룩', brand: "Levi's x Wrangler", price: '₩225,000',
     season: '가을', style: '빈티지', tags: ['웨스턴', '카우보이', '빈티지'],
     desc: '데님 재킷과 부츠컷 청바지의 웨스턴 룩. 페스티벌이나 야외 행사에 최고.',
@@ -428,7 +419,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 34, emoji: '🌹',
-    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80',
     title: '페미닌 로맨틱 룩', brand: 'Zimmermann', price: '₩289,000',
     season: '봄', style: '캐주얼', tags: ['페미닌', '로맨틱', '봄'],
     desc: '러플 블라우스와 플로럴 미디 스커트의 로맨틱 룩. 봄 소풍이나 데이트에 완벽.',
@@ -441,7 +432,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 35, emoji: '🎸',
-    image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80',
     title: '록 밴드 스트릿 룩', brand: 'Saint Laurent', price: '₩365,000',
     season: '가을', style: '스트릿', tags: ['록', '밴드', '스트릿'],
     desc: '가죽 재킷과 스키니 진의 록 스피릿 룩. 콘서트나 바에서 강렬한 인상.',
@@ -454,7 +445,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 36, emoji: '🧘',
-    image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&q=80',
     title: '요가 웰니스 룩', brand: 'Alo Yoga', price: '₩185,000',
     season: '봄', style: '스포티', tags: ['요가', '웰니스', '스포티'],
     desc: '플로우 팬츠와 요가 탑의 웰니스 룩. 요가 클래스부터 카페 브런치까지.',
@@ -466,7 +457,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 37, emoji: '🌃',
-    image: 'https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&q=80',
     title: '나이트 클럽 룩', brand: 'ASOS', price: '₩145,000',
     season: '여름', style: '스트릿', tags: ['클럽', '나이트', '파티'],
     desc: '메탈릭 탑과 미니스커트의 나이트 룩. 클럽이나 파티에서 빛나는 스타일.',
@@ -478,7 +469,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 38, emoji: '🏡',
-    image: 'https://images.unsplash.com/photo-1554412933-514a83d2f3a8?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1604644401890-0bd678c83788?w=400&q=80',
     title: '홈 카페 룩', brand: 'Mango', price: '₩98,000',
     season: '겨울', style: '캐주얼', tags: ['홈카페', '코지', '겨울'],
     desc: '두꺼운 니트 카디건과 레깅스의 편안한 홈웨어 룩. 집에서도 스타일리시하게.',
@@ -490,7 +481,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 39, emoji: '🎭',
-    image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80',
     title: '극장 포멀 룩', brand: 'Reiss', price: '₩312,000',
     season: '겨울', style: '포멀', tags: ['극장', '포멀', '클래식'],
     desc: '클래식한 블랙 수트와 화이트 셔츠. 연극, 오페라 등 격식 있는 문화행사에.',
@@ -503,7 +494,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     id: 40, emoji: '🌏',
-    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80',
     title: '백패커 여행 룩', brand: 'Patagonia', price: '₩235,000',
     season: '가을', style: '스포티', tags: ['백패킹', '여행', '아웃도어'],
     desc: '기능성 집업과 트레킹 팬츠의 백패커 룩. 어떤 날씨에도 대비할 수 있는 스타일.',
