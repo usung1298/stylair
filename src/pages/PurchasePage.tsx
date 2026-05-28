@@ -19,7 +19,7 @@ export default function PurchasePage() {
   };
 
   const getMusinsaLink = (itemName: string) =>
-    `https://search.musinsa.com/search/musinsa?q=${encodeURIComponent(itemName)}`;
+    `https://www.musinsa.com/search/goods?keyword=${encodeURIComponent(itemName)}`;
 
   const totalPrice = outfit.items.reduce((sum, item) => {
     const num = parseInt(item.price.replace(/[^0-9]/g, ''));
