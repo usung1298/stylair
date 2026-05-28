@@ -13,13 +13,19 @@ export default function PurchasePage() {
   const liked = likedOutfits.includes(outfit.id);
 
   const handleLike = () => {
-    if (!user) { showToast('로그인 후 찜하기가 가능합니다 💛'); navigate('/login'); return; }
+    if (!user) { showToast('로그인 후 찜하기가 가능합니다'); navigate('/login'); return; }
     toggleLike(outfit.id);
-    showToast(liked ? '찜 목록에서 제거됐어요' : '찜 목록에 추가됐어요 ❤️');
+    showToast(liked ? '찜 목록에서 제거됐어요' : '찜 목록에 추가됐어요');
   };
 
   const getMusinsaLink = (itemName: string) =>
-    `https://www.musinsa.com/search/goods?keyword=${encodeURIComponent(itemName)}&keywordType=keyword&gf=A`;
+    'https://www.musinsa.com/search/goods?keyword=' + encodeURIComponent(itemName) + '&keywordType=keyword&gf=A';
+
+  const getNaverLink = (itemName: string) =>
+    'https://search.shopping.naver.com/search/all?query=' + encodeURIComponent(itemName);
+
+  const getCoupangLink = (itemName: string) =>
+    'https://www.coupang.com/np/search?q=' + encodeURIComponent(itemName);
 
   const totalPrice = outfit.items.reduce((sum, item) => {
     const num = parseInt(item.price.replace(/[^0-9]/g, ''));
@@ -28,20 +34,17 @@ export default function PurchasePage() {
 
   return (
     <div className="purchase-wrap">
-      <button className="back-btn" onClick={() => navigate(`/detail/${outfit.id}`)}>
-        ← 코디 상세로
+      <button className="back-btn" onClick={() => navigate('/detail/' + outfit.id)}>
+        back 코디 상세로
       </button>
 
-      {/* 코디 헤더 */}
       <div className="purchase-header">
         <div className="purchase-img-wrap">
           <img
             src={outfit.image}
             alt={outfit.title}
             className="purchase-img"
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = 'none';
-            }}
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
           />
         </div>
         <div className="purchase-info">
@@ -56,31 +59,23 @@ export default function PurchasePage() {
           <div className="purchase-total">
             <span className="purchase-total-label">전체 구매 예상 금액</span>
             <span className="purchase-total-price">
-              ₩{totalPrice.toLocaleString()}
+              {'₩'}{totalPrice.toLocaleString()}
             </span>
           </div>
           <div className="purchase-header-actions">
-            <button
-              className={`like-btn-lg${liked ? ' liked' : ''}`}
-              onClick={handleLike}
-            >
-              {liked ? '❤️ 찜됨' : '🤍 찜하기'}
+            <button className={'like-btn-lg' + (liked ? ' liked' : '')} onClick={handleLike}>
+              {liked ? 'heart 찜됨' : 'heart 찜하기'}
             </button>
             <button
               className="buy-btn"
-              onClick={() => {
-                outfit.items.forEach(item => {
-                  window.open(getMusinsaLink(item.name), '_blank');
-                });
-              }}
+              onClick={() => outfit.items.forEach(item => window.open(getMusinsaLink(item.name), '_blank'))}
             >
-              🛍️ 전체 아이템 한번에 검색
+              전체 아이템 무신사 검색
             </button>
           </div>
         </div>
       </div>
 
-      {/* 아이템 목록 */}
       <div className="purchase-items-section">
         <div className="section-header">
           <div className="section-title">구성 아이템 ({outfit.items.length}개)</div>
@@ -94,28 +89,13 @@ export default function PurchasePage() {
                 <div className="purchase-item-name">{item.name}</div>
                 <div className="purchase-item-price">{item.price}</div>
                 <div className="purchase-item-shops">
-                  <a
-                    href={getMusinsaLink(item.name)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="shop-btn musinsa"
-                  >
-                    무신사에서 찾기
+                  <a href={getMusinsaLink(item.name)} target="_blank" rel="noopener noreferrer" className="shop-btn musinsa">
+                    무신사
                   </a>
-                  <a
-                    href={`https://search.shopping.naver.com/search/all?query=${encodeURIComponent(item.name)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="shop-btn naver"
-                  >
+                  <a href={getNaverLink(item.name)} target="_blank" rel="noopener noreferrer" className="shop-btn naver">
                     네이버 쇼핑
                   </a>
-                  <a
-                    href={`https://www.coupang.com/np/search?q=${encodeURIComponent(item.name)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="shop-btn coupang"
-                  >
+                  <a href={getCoupangLink(item.name)} target="_blank" rel="noopener noreferrer" className="shop-btn coupang">
                     쿠팡
                   </a>
                 </div>
@@ -125,9 +105,8 @@ export default function PurchasePage() {
         </div>
       </div>
 
-      {/* 전체 구매 안내 */}
       <div className="purchase-guide">
-        <div className="purchase-guide-icon">💡</div>
+        <div className="purchase-guide-icon">tip</div>
         <div>
           <div className="purchase-guide-title">코디 그대로 구매하는 방법</div>
           <div className="purchase-guide-desc">
