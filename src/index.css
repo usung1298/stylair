@@ -318,3 +318,43 @@ button { cursor: pointer; font-family: inherit; }
   .hero h1 { font-size: 2rem; }
   .footer { flex-direction: column; text-align: center; }
 }
+
+/* ── 카드 이미지 (실제 사진) ── */
+.card-img {
+  width: 100%; aspect-ratio: 3/4; background: var(--bg3);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.card-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.outfit-card:hover .card-img img { transform: scale(1.06); }
+.card-img-fallback {
+  font-size: 5rem; position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+.card-img-fallback.hidden { display: none; }
+
+/* ── 카드 메타 태그 ── */
+.card-meta { display: flex; gap: 6px; margin-bottom: 6px; }
+.card-season, .card-style {
+  font-size: 0.7rem; padding: 2px 8px; border-radius: 8px;
+  background: rgba(200,169,126,0.12); color: var(--accent);
+}
+
+/* ── 상세 페이지 이미지 ── */
+.detail-img-wrap {
+  aspect-ratio: 3/4; border-radius: 16px; overflow: hidden;
+  border: 0.5px solid var(--border); position: relative;
+  background: var(--bg3);
+}
+.detail-img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.detail-img-fallback {
+  display: none; position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-size: 7rem;
+}
+.detail-img-fallback.hidden { display: none; }

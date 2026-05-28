@@ -1,4 +1,3 @@
-// Outfit 타입 정의
 export interface OutfitItem {
   name: string;
   emoji: string;
@@ -8,6 +7,7 @@ export interface OutfitItem {
 export interface Outfit {
   id: number;
   emoji: string;
+  image: string;
   title: string;
   brand: string;
   price: string;

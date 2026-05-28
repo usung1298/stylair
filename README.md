@@ -1,10 +1,10 @@
 # STYLAIR - AI 코디 추천 웹앱
 
-> React 기말 과제 | AI 기반 패션 코디 추천 서비스
+> React 기말 프로젝트 | AI 기반 패션 코디 추천 서비스
 
 ## 배포 URL
-- Vercel: (배포 후 URL 입력)
-- GitHub: (레포 URL 입력)
+- Vercel: https://stylair-beryl.vercel.app
+- GitHub: https://github.com/usung1298/stylair
 
 ---
 

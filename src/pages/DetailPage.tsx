@@ -2,7 +2,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { OUTFITS } from '../assets/data';
 import { useAppContext } from '../context/AppContext';
 
-// DetailPage: useParams로 id 조회
 export default function DetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -27,16 +26,27 @@ export default function DetailPage() {
     <div className="detail-wrap">
       <button className="back-btn" onClick={() => navigate(-1)}>← 목록으로</button>
       <div className="detail-grid">
-        <div className="detail-img">{outfit.emoji}</div>
+        <div className="detail-img-wrap">
+          <img
+            src={outfit.image}
+            alt={outfit.title}
+            className="detail-img"
+            onError={(e) => {
+              (e.target as HTMLImageElement).style.display = 'none';
+              (e.target as HTMLImageElement).nextElementSibling!.classList.remove('hidden');
+            }}
+          />
+          <div className="detail-img-fallback hidden">{outfit.emoji}</div>
+        </div>
         <div className="detail-info">
-          <h1>{outfit.title}</h1>
-          <div className="detail-brand">{outfit.brand}</div>
-          <div className="detail-price">{outfit.price}</div>
           <div className="detail-tags">
             {[...outfit.tags, outfit.season, outfit.style].map(t => (
               <span key={t} className="detail-tag">{t}</span>
             ))}
           </div>
+          <h1>{outfit.title}</h1>
+          <div className="detail-brand">{outfit.brand}</div>
+          <div className="detail-price">{outfit.price}</div>
           <p className="detail-desc">{outfit.desc}</p>
           <div className="detail-items">
             <h3>구성 아이템</h3>
