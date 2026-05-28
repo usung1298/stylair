@@ -38,6 +38,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     );
 
     const data = await response.json();
+    console.log('Gemini response:', JSON.stringify(data));
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text ?? '추천을 불러오지 못했어요.';
     return res.status(200).json({ result: text });
   } catch (error) {
