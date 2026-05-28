@@ -1,6 +1,5 @@
 // src/hooks/useAIRecommend.ts
 import { useState, useCallback } from 'react';
-import { Season, Style, Occasion } from '../types';
 
 interface AIParams {
   season: Season;

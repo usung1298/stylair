@@ -1,7 +1,6 @@
 // src/hooks/useOutfits.ts
 import { useMemo } from 'react';
 import { OUTFITS } from '../assets/outfits';
-import { Outfit, Season, Style } from '../types';
 
 // useMemo를 활용해 필터링된 코디 리스트를 메모이제이션
 // → filterSeason, filterStyle, query가 바뀔 때만 재계산
