@@ -358,3 +358,66 @@ button { cursor: pointer; font-family: inherit; }
   font-size: 7rem;
 }
 .detail-img-fallback.hidden { display: none; }
+
+/* ── 구매 페이지 ── */
+.purchase-wrap { max-width: 900px; margin: 0 auto; padding: 2rem; }
+
+.purchase-header {
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem;
+  margin-bottom: 3rem;
+}
+.purchase-img-wrap {
+  aspect-ratio: 3/4; border-radius: 16px; overflow: hidden;
+  border: 0.5px solid var(--border); background: var(--bg3);
+}
+.purchase-img { width: 100%; height: 100%; object-fit: cover; }
+
+.purchase-total {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--bg3); border-radius: 12px; padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem; border: 0.5px solid var(--border);
+}
+.purchase-total-label { font-size: 0.85rem; color: var(--muted); }
+.purchase-total-price { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+
+.purchase-header-actions { display: flex; gap: 10px; }
+
+/* 아이템 그리드 */
+.purchase-items-section { margin-bottom: 2rem; }
+.purchase-items-grid { display: flex; flex-direction: column; gap: 1rem; }
+
+.purchase-item-card {
+  background: var(--bg2); border: 0.5px solid var(--border); border-radius: 16px;
+  padding: 1.25rem; display: flex; gap: 1.25rem; align-items: center;
+  transition: all 0.2s;
+}
+.purchase-item-card:hover { border-color: var(--accent); transform: translateX(4px); }
+.purchase-item-emoji { font-size: 2.5rem; flex-shrink: 0; }
+.purchase-item-info { flex: 1; }
+.purchase-item-name { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.purchase-item-price { font-size: 0.9rem; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+
+.purchase-item-shops { display: flex; gap: 8px; flex-wrap: wrap; }
+.shop-btn {
+  padding: 6px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 600;
+  text-decoration: none; transition: all 0.2s; border: none; cursor: pointer;
+}
+.shop-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+.shop-btn.musinsa { background: #000; color: #fff; }
+.shop-btn.naver { background: #03c75a; color: #fff; }
+.shop-btn.coupang { background: #c00; color: #fff; }
+/* 구매 안내 */
+.purchase-guide {
+  background: rgba(200,169,126,0.08); border: 1px solid rgba(200,169,126,0.25);
+  border-radius: 16px; padding: 1.25rem 1.5rem;
+  display: flex; gap: 1rem; align-items: flex-start;
+}
+.purchase-guide-icon { font-size: 1.5rem; flex-shrink: 0; }
+.purchase-guide-title { font-size: 0.95rem; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+.purchase-guide-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+@media (max-width: 768px) {
+  .purchase-header { grid-template-columns: 1fr; }
+  .purchase-img-wrap { aspect-ratio: 4/3; }
+  .purchase-header-actions { flex-direction: column; }
+}

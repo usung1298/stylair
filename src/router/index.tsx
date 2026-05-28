@@ -4,6 +4,7 @@ import HomePage       from '../pages/HomePage';
 import DetailPage     from '../pages/DetailPage';
 import LoginPage      from '../pages/LoginPage';
 import MyPage         from '../pages/MyPage';
+import PurchasePage   from '../pages/PurchasePage';
 import NotFoundPage   from '../pages/NotFoundPage';
 
 const router = createBrowserRouter([
@@ -11,11 +12,12 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     children: [
-      { index: true,         element: <HomePage /> },
-      { path: 'detail/:id', element: <DetailPage /> },
-      { path: 'login',      element: <LoginPage /> },
-      { path: 'mypage',     element: <MyPage /> },
-      { path: '*',          element: <NotFoundPage /> },
+      { index: true,            element: <HomePage /> },
+      { path: 'detail/:id',    element: <DetailPage /> },
+      { path: 'purchase/:id',  element: <PurchasePage /> },
+      { path: 'login',         element: <LoginPage /> },
+      { path: 'mypage',        element: <MyPage /> },
+      { path: '*',             element: <NotFoundPage /> },
     ],
   },
 ]);

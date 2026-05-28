@@ -8,11 +8,7 @@ export default function DetailPage() {
   const { likedOutfits, toggleLike, user, showToast } = useAppContext();
 
   const outfit = OUTFITS.find(o => o.id === Number(id));
-
-  if (!outfit) {
-    navigate('/404');
-    return null;
-  }
+  if (!outfit) { navigate('/404'); return null; }
 
   const liked = likedOutfits.includes(outfit.id);
 
@@ -62,8 +58,8 @@ export default function DetailPage() {
             <button className={`like-btn-lg${liked ? ' liked' : ''}`} onClick={handleLike}>
               {liked ? '❤️ 찜됨' : '🤍 찜하기'}
             </button>
-            <button className="buy-btn" onClick={() => showToast('구매 페이지로 이동합니다! 🛍️')}>
-              구매하기
+            <button className="buy-btn" onClick={() => navigate(`/purchase/${outfit.id}`)}>
+              🛍️ 구매하기
             </button>
           </div>
         </div>
